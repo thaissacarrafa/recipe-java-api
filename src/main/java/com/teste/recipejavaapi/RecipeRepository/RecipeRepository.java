@@ -1,7 +1,10 @@
 package com.teste.recipejavaapi.RecipeRepository;
 
+import com.teste.recipejavaapi.model.Recipe;
+
 public class RecipeRepository {
-
-
-    // aqui farei a configuração do banco de dados
+    public Recipe save(Recipe recipe) {
+        System.out.println("Receita salva");
+        return null;
+    }
 }

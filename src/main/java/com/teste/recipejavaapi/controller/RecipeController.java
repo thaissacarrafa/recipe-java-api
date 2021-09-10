@@ -1,49 +1,45 @@
 package com.teste.recipejavaapi.controller;
 
+import com.teste.recipejavaapi.model.Recipe;
+import com.teste.recipejavaapi.service.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("recipe")
 
-public class ReceitasController {
+public class RecipeController {
 
     @Autowired
-    private RecipeController service;
+    private RecipeService service;
 
     @PostMapping
-    public Recipe save(@Valid @RequestBody Recipe recipe) {
+    public Recipe save(@RequestBody Recipe recipe) {
         return service.save(recipe);
     }
 
-    @PutMapping("{id}")
-    public void update(@PathVariable String id, @Valid @RequestBody Recipe recipe) {
-        service.update(id, recipe);
+    /* @PutMapping("/{id}")
+    public void update(@PathVariable String id, @Valid @RequestBody Recipe recipe) { service.update(id, recipe);
     }
 
-    @DeleteMapping("{id}")
-    public void deleteid(@PathVariable String id) {
+    @DeleteMapping("/{id}")
+    public void deleteId(@PathVariable String id) {
         service.delete(id);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public Recipe get(@PathVariable String id) {
         return service.get(id);
     }
 
     @GetMapping("/ingredient")
-    public List<Recipe> listByIngredient(@RequestParam(name = "ingredient") String ingredient) {
+    public List<Recipe> listByIngredient(@RequestParam List<String> ingredient) {
         return service.listByIngredient(ingredient);
     }
 
-    @DeleteMapping("/ingredient")
-    public void deleteingredient(@PathVariable String ingredient) {
-        service.delete(ingredient)
+    @PatchMapping("/{id}")
+    public void changeingredient(@PathVariable String id,@RequestParam List <String> ingredient)  {
+        service.update(id,ingredient);
     }
-
-    @PatchMapping("id")
-    public void change(@PathVariable String id, @Valid @RequestBody Recipe recipe) {
-        service.update(id, recipe);
-    }
-
-}
+*/
+ }
